@@ -1,6 +1,6 @@
 {
   "name": "easy-ensure",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple assertions to validate parameters.",
   "author": "Buddhike de Silva",
   "license": "MIT",
