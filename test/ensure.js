@@ -121,3 +121,23 @@ describe('ensure instanceOf', () => {
     (() => ensure.instanceOf(new Foo(), Bar)).should.throw(/instance of/);
   });
 });
+
+describe('ensure array', () => {
+  it('should work for valid arrays', () => {
+    ensure.array([]);
+  });
+
+  it('should not work for non-arrays', () => {
+    (() => ensure.array(new Date())).should.throw(/array/);
+  });
+});
+
+describe('ensure date', () => {
+  it('should work for valid dates', () => {
+    ensure.date(new Date());
+  });
+
+  it('should not work for non-dates', () => {
+    (() => ensure.date({}, 'date')).should.throw(/date/);
+  });
+});

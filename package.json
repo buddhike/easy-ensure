@@ -1,13 +1,13 @@
 {
   "name": "easy-ensure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple assertions to validate parameters.",
   "author": "Buddhike de Silva",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel lib/ -d dist/ --source-maps",
-    "eslint": "eslint src",
+    "eslint": "eslint lib test",
     "test": "istanbul cover node_modules/.bin/_mocha -- -u exports --compilers js:babel-register -R spec -r test/setup.js test/*{,*/}*.js",
     "start": "nodemon --ignore dist/ --ignore node_modules/ --exec 'npm run eslint && npm run test && npm run build'"
   },
