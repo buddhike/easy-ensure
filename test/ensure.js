@@ -103,3 +103,21 @@ describe('ensure non empty string', () => {
     (() => ensure.nonEmptyString(undefined, 'msg')).should.throw(/msg/);
   });
 });
+
+describe('ensure instanceOf', () => {
+  class Foo {
+
+  }
+
+  class Bar {
+
+  }
+
+  it('should work for valid instances of a class', () => {
+    ensure.instanceOf(new Foo(), Foo);
+  });
+
+  it('should not work for invalid instances of a class', () => {
+    (() => ensure.instanceOf(new Foo(), Bar)).should.throw(/instance of/);
+  });
+});
